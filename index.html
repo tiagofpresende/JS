@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html>
-<head>cd
+<head>
 <script>
 function myFunction() {
-  console.log('hello world!')
+  document.getElementById("IMC").innerHTML = document.getElementById("peso").innerHTML*Math.pow(document.getElementById("altura").innerHTML, 2);
 }
 </script>
 </head>
 <body>
-
-<h1>A Web Page</h1>
-<p id="demo">A Paragraph</p>
-<button type="button" onclick="myFunction()">Try it</button>
+<h1>Cálculo do IMC</h1>
+<p id="IMC">Seu IMC vai aparecer aqui</p>
+<form>
+    Peso: <input type="number" name="peso"><br>
+    Altura: <input type="number" name="altura"><br>
+</form>
+  <button type="button" onclick="myFunction()">Calcular IMC</button>
 
 </body>
 </html>
