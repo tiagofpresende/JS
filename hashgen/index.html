@@ -39,21 +39,28 @@
         function gera_hash() {
             var char_str = "";
             var qtde_char = document.getElementById("qtde_char").value;
-            var hash = "";
+            var hash_arr = [];
+            var hash = "";
             // preparar char_str (com elementos de complexidade selecionados)
             if (document.getElementById("nums").checked) {
-                char_str += "1234567890"
+                char_str += "1234567890";
+                hash_arr.push("1234567890".charAt(Math.floor(Math.random() * 10)));
             }
             if (document.getElementById("letra_min").checked) {
-                char_str += "abcdefghijklmnopqrstuvxz"
+                char_str += "abcdefghijklmnopqrstuvwxyz";
+                hash_arr.push("abcdefghijklmnopqrstuvwxyz".charAt(Math.floor(Math.random() * 36)));
             }
             if (document.getElementById("letra_mai").checked) {
-                char_str += "abcdefghijklmnopqrstuvxz".toUpperCase()
+                char_str += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+                hash_arr.push("ABCDEFGHIJKLMNOPQRSTUVWXYZ".charAt(Math.floor(Math.random() * 36)));
             }
-            for (var i = 0; i < qtde_char; i++) {
-                hash += char_str.charAt(Math.floor(Math.random() * char_str.length));
+            for (var i = hash_arr.length; i < qtde_char; i++) {
+                hash_arr.push(char_str.charAt(Math.floor(Math.random() * char_str.length)));
             };
-            return hash;
+            for (var i = 0; i < hash_arr; i++) {
+                hash += hash_arr.splice(Math.floor(Math.random() * hash_arr.length),1);
+            };
+            return hash_arr;
         }
 
         function lista_hash() {
