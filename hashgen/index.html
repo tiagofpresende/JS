@@ -51,18 +51,18 @@
                 char_str += "abcdefghijklmnopqrstuvxz".toUpperCase()
             }
             for (var i = 0; i < qtde_char; i++) {
-                hash += char_str.charAt(Math.floor(Math.random() * 36));
+                hash += char_str.charAt(Math.floor(Math.random() * char_str.length));
             };
             return hash;
         }
-
 
         function lista_hash() {
             var qtde_hash = document.getElementById("qtde_hash").value;
             var hash_list = "<ul>";
             //loop qtde_hash
             for (var i = 0; i < qtde_hash; i++) {
-                hash_list += "<li>" + gera_hash() + "</li>";
+                var hash = gera_hash();
+                hash_list += "<li>" + hash + " - " + hash.length + "</li>";
             }
             hash_list += "</ul>";
             //imprimir lista
