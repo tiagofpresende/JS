@@ -1,13 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="utf-8">
 </head>
 <body>
     <script>
-        var pesoIMC = document.getElementById("peso").value;
-        var alturaIMC = Math.pow(document.getElementById("altura").value, 2);
         function myFunction() {
-          document.getElementById("IMC").innerHTML = toString(pesoIMC * alturaIMC);
+            let pesoIMC = 0;
+            let alturaIMC = 0;
+            let IMC = 0;
+            pesoIMC = document.getElementById("peso").value;
+            alturaIMC = Math.pow(document.getElementById("altura").value, 2);
+            IMC = pesoIMC / alturaIMC;
+            console.log(pesoIMC)
+            console.log(alturaIMC)
+            console.log(IMC)
+            document.getElementById("IMC").innerHTML = IMC;
         }
         </script>
     
