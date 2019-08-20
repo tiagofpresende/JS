@@ -3,20 +3,20 @@
 <head>
 </head>
 <body>
+    <script>
+        function myFunction() {
+          var pesoIMC = document.getElementById("peso").value;
+          var alturaIMC = Math.pow(document.getElementById("altura").value, 2));
+          document.getElementById("IMC").innerHTML = toString(pesoIMG * alturaIMC)
+        }
+        </script>
+    
 <h1>Cálculo do IMC</h1>
 <p id="IMC">Seu IMC vai aparecer aqui</p>
 <form>
     Peso: <input type="number" name="peso" id="peso"><br>
     Altura: <input type="number" name="altura" id="altura"><br>
 </form>
-  <button type="button" onclick="myFunction()">Calcular IMC</button>
-  
-  <script>
-    function myFunction() {
-      var pesoIMC = document.getElementById("peso").value;
-      var alturaIMC = Math.pow(document.getElementById("altura").value, 2));
-      document.getElementById("IMC").innerHTML = toString(pesoIMG * alturaIMC)
-    }
-    </script>
+  <button type="button" onclick="myFunction()">Calcular IMC</button>  
 </body>
 </html>
