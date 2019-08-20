@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf_8">
+    <title>HashGen</title>
+  <!---  <style>
+        body {
+            background_color: rgb(150, 150, 150);
+        }
+
+        h1 {
+            color: white;
+            text_align: center;
+        }
+
+        p {
+            font_family: verdana;
+            font_size: 20px;
+        }
+
+        .button {
+            background_color: rgb(252, 247, 0);
+            border: none;
+            color: rgb(0, 0, 0);
+            padding: 15px 32px;
+            text_align: center;
+            text_decoration: none;
+            display: inline_block;
+            font_size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+    </style> -->
+</head>
+
+<body>
+    <script>
+        function gera_hash() {
+            var char_str = "";
+            var qtde_char = document.getElementById("qtde_char").value;
+            var hash = "";
+            // preparar char_str (com elementos de complexidade selecionados)
+            if (document.getElementById("nums").checked) {
+                char_str += "1234567890"
+            }
+            if (document.getElementById("letra_min").checked) {
+                char_str += "abcdefghijklmnopqrstuvxz"
+            }
+            if (document.getElementById("letra_mai").checked) {
+                char_str += "abcdefghijklmnopqrstuvxz".toUpperCase()
+            }
+            for (var i = 0; i < qtde_char; i++) {
+                hash += char_str.charAt(Math.floor(Math.random() * 36));
+            };
+            document.getElementById("lista_hash").innerHTML = hash + "<br>" + char_str;
+        }
+
+
+        function lista_hash() {
+            //verificar se foi selecionado pelo menos um elemento de complexidade
+            if (document.getElementById("nums").checked === true && document.getElementById("letra_min").checked === true && document.getElementById("letra_mai").checked === true) {
+                alert("Escolha pelo menos um tipo de caracter para compor a senha")
+                return false
+            }
+            var qtde_hash = 0;
+            var hash_list = "<ul>";
+            var i = 0
+            //loop qtde_hash
+            for (i = 0; i < qtde_hash; i++) {
+                hash_list += "<li>" + fruits[i] + "</li>";
+            }
+            text += "</ul>";
+            //imprimir lista
+        }
+        //funcao de debug
+        function funcao_check() { console.log(document.getElementById("nums").value) }
+    </script>
+
+    <h1>Missão: "criar um gerador de senha" que possibilite as seguintes configurações:</h1>
+    <form id="options">
+        <p> 1. Definir quantidade de caracteres: <input type="number" id="qtde_char" value=6> </p>
+        <p> 2. Setar nível de complexidade:</p>
+        <p> 2.1 Números <input type="checkbox" id="nums" checked = true></p>
+        <p> 2.2 Letras minúsculas <input type="checkbox" id="letra_min" checked = true></p>
+        <p> 2.3 Letras maiúsculas <input type="checkbox" id="letra_mai"></p>
+        <p> 3. Definir a quantidade de senhas que serão geradas: <input type="number" id="qtde_hash"></p>
+    </form>
+    <p> <button id="gerar" class="button" onclick="gera_hash()">Gerar</button> </p>
+    <p id="lista_hash"> </p>
+</body>
+
+</html>
