@@ -18,7 +18,7 @@
             var random = 0;
             var char = "";
             for (var i = 0; i < a.length;) {
-                random = Math.floor(Math.random() * 26);
+                random = Math.floor(Math.random() * a.length);
                 char = a.charAt(random);
                 if (alph.includes(char)===false) {
                     alph += char;
