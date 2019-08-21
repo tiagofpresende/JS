@@ -1,9 +1,9 @@
-<!DOCTYPE html>
 <html>
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">    <title>HashGen</title>
-  <!---  <style>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>HashGen</title>
+    <style type="tex/css">
         body {
             background_color: rgb(150, 150, 150);
         }
@@ -30,7 +30,7 @@
             margin: 4px 2px;
             cursor: pointer;
         }
-    </style> -->
+    </style>
 </head>
 
 <body>
@@ -47,19 +47,19 @@
             }
             if (document.getElementById("letra_min").checked) {
                 char_str += "abcdefghijklmnopqrstuvwxyz";
-                hash_arr.push("abcdefghijklmnopqrstuvwxyz".charAt(Math.floor(Math.random() * 36)));
+                hash_arr.push("abcdefghijklmnopqrstuvwxyz".charAt(Math.floor(Math.random() * 26)));
             }
             if (document.getElementById("letra_mai").checked) {
                 char_str += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-                hash_arr.push("ABCDEFGHIJKLMNOPQRSTUVWXYZ".charAt(Math.floor(Math.random() * 36)));
+                hash_arr.push("ABCDEFGHIJKLMNOPQRSTUVWXYZ".charAt(Math.floor(Math.random() * 26)));
             }
             for (var i = hash_arr.length; i < qtde_char; i++) {
                 hash_arr.push(char_str.charAt(Math.floor(Math.random() * char_str.length)));
             };
-            for (var i = 0; i < hash_arr; i++) {
-                hash += hash_arr.splice(Math.floor(Math.random() * hash_arr.length),1);
+            for (var i = 0; i < qtde_char; i++) {
+                hash += hash_arr.splice(Math.floor(Math.random() * hash_arr.length), 1);
             };
-            return hash_arr;
+            return hash;
         }
 
         function lista_hash() {
@@ -82,10 +82,10 @@
     <form id="options">
         <p> 1. Definir quantidade de caracteres: <input type="number" id="qtde_char" value=6> </p>
         <p> 2. Setar nível de complexidade:</p>
-        <p> 2.1 Números <input type="checkbox" id="nums" checked = true></p>
-        <p> 2.2 Letras minúsculas <input type="checkbox" id="letra_min" checked = true></p>
+        <p> 2.1 Números <input type="checkbox" id="nums" checked=true></p>
+        <p> 2.2 Letras minúsculas <input type="checkbox" id="letra_min" checked=true></p>
         <p> 2.3 Letras maiúsculas <input type="checkbox" id="letra_mai"></p>
-        <p> 3. Definir a quantidade de senhas que serão geradas: <input type="number" id="qtde_hash" value = 3></p>
+        <p> 3. Definir a quantidade de senhas que serão geradas: <input type="number" id="qtde_hash" value=3></p>
     </form>
     <p> <button id="gerar" class="button" onclick="lista_hash()">Gerar</button> </p>
     <p> A lista de códigos gerados vai aparecer aqui:<br> </p>

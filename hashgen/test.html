@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>JS Bin</title>
+</head>
+
+<body>
+    <p>String: <input id="string" type="text" value = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"></input></p>
+    <button onclick="test(getElementById('string').value)">clica</button>
+    <br>
+    <p id="teste"> resultado</p>
+    <script>
+        function test(a) {
+            var alph = "";
+            var random = 0;
+            var char = "";
+            for (var i = 0; i < a.length;) {
+                random = Math.floor(Math.random() * 26);
+                char = a.charAt(random);
+                if (alph.includes(char)===false) {
+                    alph += char;
+                    i++;
+                }
+            }
+            document.getElementById("teste").innerHTML = alph.length + " - " + alph
+        }
+    </script>
+
+</body>
+
+</html>
