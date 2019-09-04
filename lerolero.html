@@ -6,8 +6,38 @@
   <title>Gerador de Bullshitagem Digital</title>
 <style>
       body{
-            background-color: yellow
+            background-color: rgb(230, 214, 0)
       }
+h1 {
+    float: none;
+    color: #3E3E3E;
+    font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, sans-serif;
+    font-size: 2rem;
+    text-align: center;
+}
+#texto {
+    width: 98%;
+    float: none;
+    clear: none;
+}
+body p {
+    font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, sans-serif;
+    font-size: 1rem;
+}
+.button {
+    width: 5rem;
+    height: 3rem;
+    border-radius: 13px;
+    background-color: #3E3E3E;
+    color: #FFFFFF;
+    font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
+    font-size: 1rem;
+    border-width: 0px;
+    float: right;
+}
+#quantity {
+    font-size: 1rem;
+}
 </style>
 </head>
 <body>
@@ -65,5 +95,6 @@
    Clique em "Gerar"
 </textarea></p>
 <p><button id="gerar" class="button" onclick="document.getElementById('texto').innerHTML = bullshit(document.getElementById('quantity').value)">Gerar</button></p>
+	
 </body>
 </html>
