@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Gerador de Bullshitagem Digital</title>
+<style>
+      body{
+            background-color: yellow
+      }
+</style>
+</head>
+<body>
+<script>
+  function bullshit(n) {
+        const part01 = ["No mundo digital,", 
+              "Proativamente falando,", 
+              "Com o apoio dos stakeholders,", 
+              "Com o avanço da mobilidade,", 
+              "Em termos de melhores práticas,", 
+              "Na queda de paradigmas,", 
+              "Já que estamos pensando fora da caixa,", 
+              "Falando de alinhamento,", 
+              "Para sair do business as usual,", 
+              "Levando em conta a nova economia,"];
+        const part02 = ["a monetização", 
+              "a globalização", 
+              "o compliance", 
+              "a diversidade", 
+              "a sustentabilidade", 
+              "a convergência", 
+              "o foco no core business", 
+              "a inovação", 
+              "a responsividade", 
+              "a rede social"];
+        const part03 = ["determina o fator de engajamento", 
+              "pode significar oportunidades", 
+              "é o touchpoint", 
+              "habilita o framework de análise", 
+              "proporciona o empowerment", 
+              "pode ser parte da solução", 
+              "gerencia as expectaticas", 
+              "é urgente e importante", 
+              "é o game-changer", 
+              "deveria ser uma lição aprendida"];
+        const part04 = ["para a sinergia das ações planejadas.", 
+              "na busca da relação ganha ganha.", 
+              "para sair da zona de conforto.", 
+              "nas visões holísticas dos projetos.", 
+              "em uma organização de classe mundial.", 
+              "para determinar o ROI da organização.", 
+              "para nos posicionarmos no cutting-edge do segmento.", 
+              "no universo de consumidores multitela.", 
+              "na ações on e offline.", 
+              "nas ações de valor agregado."];
+        var frase = ""
+        for(n<0;n--;){
+        frase+=part01.splice(Math.floor(Math.random()*part01.length),1)+" "+part02.splice(Math.floor(Math.random()*part02.length),1)+" "+part03.splice(Math.floor(Math.random()*part03.length),1)+" "+part04.splice(Math.floor(Math.random()*part04.length),1)+" ";};
+        return frase;
+    } 
+  </script>
+<h1>Digital Bullshit Generator</h1>
+<p>Quantidade de frases: <input type="number" name="quantity" id = "quantity" min="1" max="10" value="1"></p>
+<p><textarea id="texto" rows="7" cols="100">
+   Clique em "Gerar"
+</textarea></p>
+<p><button id="gerar" class="button" onclick="document.getElementById('texto').innerHTML = bullshit(document.getElementById('quantity').value)">Gerar</button></p>
+</body>
+</html>
