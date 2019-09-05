@@ -3,34 +3,8 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>HashGen</title>
-<!-- <style type="text/css">
-	        body {
-            background_color: rgb(150, 150, 150);
-        }
+    <link rel="stylesheet" type="text/css" href="../estilo.css" />
 
-        h1 {
-            color: white;
-            text_align: center;
-        }
-
-        p {
-            font_family: verdana;
-            font_size: 20px;
-        }
-
-        .button {
-            background_color: rgb(252, 247, 0);
-            border: none;
-            color: rgb(0, 0, 0);
-            padding: 15px 32px;
-            text_align: center;
-            text_decoration: none;
-            display: inline_block;
-            font_size: 16px;
-            margin: 4px 2px;
-            cursor: pointer;
-        }
-    </style> -->
 </head>
 
 <body>
@@ -80,14 +54,17 @@
 
     <h1>Missão: "criar um gerador de senha" que possibilite as seguintes configurações:</h1>
     <form id="options">
-        <p> 1. Definir quantidade de caracteres: <input type="number" id="qtde_char" value=6> </p>
+        <p> 1. Definir quantidade de caracteres: <input class="input" type="number" id="qtde_char" value=6> </p>
         <p> 2. Setar nível de complexidade:</p>
-        <p> 2.1 Números <input type="checkbox" id="nums" checked=true></p>
-        <p> 2.2 Letras minúsculas <input type="checkbox" id="letra_min" checked=true></p>
-        <p> 2.3 Letras maiúsculas <input type="checkbox" id="letra_mai"></p>
-        <p> 3. Definir a quantidade de senhas que serão geradas: <input type="number" id="qtde_hash" value=3></p>
+        <p> 2.1 Números <input class="input" type="checkbox" id="nums" checked=true></p>
+        <p> 2.2 Letras minúsculas <input class="input" type="checkbox" id="letra_min" checked=true></p>
+        <p> 2.3 Letras maiúsculas <input class="input" type="checkbox" id="letra_mai"></p>
+        <p> 3. Definir a quantidade de senhas que serão geradas: <input class="input" type="number" id="qtde_hash" value=3></p>
     </form>
     <p> <button id="gerar" class="button" onclick="lista_hash()">Gerar</button> </p>
+    <br>
+    <br>    
+    <br>
     <p> A lista de códigos gerados vai aparecer aqui:<br> </p>
     <p id="lista_hash"> </p>
 </body>

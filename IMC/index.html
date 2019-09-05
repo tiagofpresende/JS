@@ -2,6 +2,8 @@
 <html>
 <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="../estilo.css" />
+
 </head>
 <body>
     <script>
@@ -12,19 +14,16 @@
             pesoIMC = document.getElementById("peso").value;
             alturaIMC = Math.pow(document.getElementById("altura").value, 2);
             IMC = pesoIMC / alturaIMC;
-            console.log(pesoIMC)
-            console.log(alturaIMC)
-            console.log(IMC)
-            document.getElementById("IMC").innerHTML = IMC;
+            return parseFloat((document.getElementById("peso").value/Math.pow(document.getElementById("altura").value,2))*10000).toFixed(1);
         }
         </script>
     
 <h1>Cálculo do IMC</h1>
-<p id="IMC">Seu IMC vai aparecer aqui</p>
+<h1 id="IMC">Seu IMC vai aparecer aqui</h1>
 <form>
-    Peso: <input type="number" name="peso" id="peso"><br>
-    Altura: <input type="number" name="altura" id="altura"><br>
+    <p>Peso: <input type="number" name="peso" id="peso"></p>
+    <p>Altura: <input type="number" name="altura" id="altura"></p>
 </form>
-  <button type="button" onclick="myFunction()">Calcular IMC</button>  
+<p><button class="button" type="button" onclick="document.getElementById('IMC').innerHTML = myFunction()">Calcular IMC</button>  <p>
 </body>
 </html>
